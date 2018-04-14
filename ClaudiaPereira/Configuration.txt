@@ -1,0 +1,10 @@
+Configuração da app Angular
+
+Instalação
+npm install
+
+Arrancar com o serviço:
+ng server -o
+
+Aceder à aplicação:
+http://localhost:4200/

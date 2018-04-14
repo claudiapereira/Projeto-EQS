@@ -1,0 +1,192 @@
+body {
+    background:#21252b;
+    color: #333;
+    font-size:14px;
+    font-family: 'Raleway', sans-serif;
+    padding: 0;
+    margin:0;
+}
+*{
+    box-sizing: border-box;
+    font-family: 'Raleway', sans-serif;
+    margin:0;
+    font-size: 16px;
+    outline: none;
+}
+input {
+    background: #21252b;
+    color: #fff;
+    position:relative;
+    top:25px;
+    width: 240px;
+}
+h1 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size:30px;
+    color: #80a7f5;
+}
+h4 {
+    font-family: 'Raleway', sans-serif;
+    font-weight: 300;
+    font-size:30px;
+    color: white;
+}
+button {
+    background: #528bff;
+    color: #fff;
+    position:relative;
+    top:5px;
+    width: 64px;
+    height: 64px;
+    line-height: 38px;
+    border-radius: 100%;
+    display: inline-block;
+    vertical-align:middle;
+}
+.btnListagem {
+    background: #528bff;
+    width: 130px;
+    top:5px;
+    display: inline-block;
+    vertical-align:middle;
+}
+.bttnSubmit{
+    background: #528bff;
+    width: 64px;
+    top:0px;
+    display: block;
+    float:left;
+}
+.btnEditar {
+    background: #528bff;
+    width: 100px;
+    top:5px;
+    display: inline-block;
+    vertical-align:middle;
+}
+.btnApagar {
+    background: #528bff;
+    width: 110px;
+    top:5px;
+    display: inline-block;
+    vertical-align:middle;
+}
+.btnCriarnovo {
+    background: #528bff;
+    width: 140px;
+    top:5px;
+    display: inline-block;
+    vertical-align:middle;
+}
+.userEmailPost {
+    background: #528bff;
+    color: #fff;
+    position:relative;
+    top:5px;
+    height: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-size:18px;
+    text-align: center;
+}
+.userLoginPost {
+    background: #528bff;
+    color: #fff;
+    position:relative;
+    top:5px;
+    height: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-size:18px;
+}
+.userRolesPost {
+    background: #528bff;
+    color: #fff;
+    position:relative;
+    top:5px;
+    height: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-size:18px;
+}
+.userUidPost {
+    background: #528bff;
+    color: #fff;
+    position:relative;
+    top:5px;
+    height: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-size:18px;
+}
+.rolesIdPost {
+    background: #528bff;
+    color: #fff;
+    position:relative;
+    top:5px;
+    height: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-size:18px;
+    text-align: center;
+}
+.rolesNamePost {
+    background: #528bff;
+    color: #fff;
+    position:relative;
+    top:5px;
+    height: 100%;
+    font-family: 'Raleway', sans-serif;
+    font-size:18px;
+    text-align: center;
+}
+.userRolesPostName {
+    background: #528bff;
+    color: #fff;
+    position:relative;
+    top:5px;
+    font-family: 'Raleway', sans-serif;
+    font-size:18px;
+}
+.userRolesPostId {
+    background: #528bff;
+    color: #fff;
+    position:relative;
+    top:5px;
+    font-family: 'Raleway', sans-serif;
+    font-size:18px;
+}
+.tableRoles {
+    border-color: white;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    border-collapse: collapse;
+    width: 1000px;
+    text-align: center;
+}
+.tableUser{
+    border-color: white;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    border-collapse: collapse;
+    width: 1000px;
+    text-align: center;
+}
+.tableUserRoles {
+    border-color: white;
+    font-family: 'Raleway', sans-serif;
+    color: white;
+    border-collapse: collapse;
+    width: 1000px;
+    text-align: center;
+}
+tr {
+    border: 1px solid #c6c6c6;
+    width: 150%;
+}
+td {
+    border: 1px solid #c6c6c6;
+    text-align: center;
+    padding: 8px;
+    width: 330px;
+}
+fieldset, legend {
+    font-family: 'Raleway', sans-serif;
+    color: white;
+}

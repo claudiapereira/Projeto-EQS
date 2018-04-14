@@ -1,0 +1,153 @@
+<html>
+    <head>
+    </head>
+    <body>
+        <div *ngIf="user$ | async as user" align="center">
+                <br>
+                <br>
+                <h1 *ngIf="!user.uid">Bem-vindo, à {{ title }}</h1>
+                <h1 *ngIf="user.uid">Bem-vindo, {{ user.login }}</h1>
+                    <button *ngIf="!user.uid" (click)="googleLogin();googleUserLogin();">
+                    Login
+                    </button>
+                <br>
+                <br>
+                <fieldset *ngIf="user.uid">
+                    <legend> Tabela roles </legend>
+                    <button class="btnListagem" (click)="callgetRoles();">Ver listagem</button>
+                    <br>
+                    <br>
+                    <table border=1 [style.display]="styleUserButtonsRolesTable">
+                        <thead>
+                            <tr>
+                                <th>Id</th>
+                                <th>Nome</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                        <tr *ngFor="let role of getRoles; let i = index">
+                            <td nowrap align="center">
+                                <h1 id="rolesIdPost" class="rolesIdPost" [contentEditable]="contentEditableRoles" #refroleid>{{role.id}}</h1>
+                            </td>
+                            <td nowrap align="center">
+                                <h1 id="rolesNamePost" class="rolesNamePost" [contentEditable]="contentEditableRoles"  #refrolename>{{role.name}}</h1>
+                            </td>
+                            <td nowrap align="center">
+                                <button class="bttnSubmit" (click) = "calleditRolesPost(refroleid.textContent,refrolename.textContent);addColumnValueRoles();selectContentRoles();" [style.display]="styleRoles" #refbutton>submit</button>
+                                <button (click)="selectContentRoles();" [style.display]="styleUserButtonsRoles"  class="bttnSubmit">
+                                    Editar
+                                </button>
+                                <button (click)="callcanRolesDelete(role);deleteColumnValueRoles();" [style.display]="styleUserButtonsRoles"  class="bttnSubmit">
+                                    Apagar
+                                </button>
+                                <button (click)="callcreateRolesPost();addColumnValueRoles();" [style.display]="styleUserButtonsRoles" class="bttnSubmit">
+                                    Criar
+                                </button>
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+                <br>
+                <br>
+                <fieldset *ngIf="user.uid">
+                    <legend> Tabela user </legend>
+                    <button class="btnListagem" (click)="callgetUsers();">Ver listagem</button>
+                    <br>
+                    <br>
+                    <table border=1  [style.display]="styleUsersTable">
+                        <thead>
+                            <tr> <!--  [style.display]="styleUserUsersTablesTr" -->
+                                <th>Id</th>
+                                <th>Email</th>
+                                <th>Login</th>
+                                <th>Roles</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr *ngFor="let users of getUser; let i = index">
+                                <td nowrap align="center"> 
+                                    <h1 id="userUidPost" class="userUidPost" [contentEditable]="contentEditableUser" #refuseruid>{{users.uid}}</h1>
+                                </td>
+                                <td nowrap align="center">
+                                    <h1 id="userEmailPost" class="userEmailPost" [contentEditable]="contentEditableUser" #refuseremail>{{users.email}}</h1>
+                                </td>
+                                <td nowrap align="center">
+                                    <h1 id="userLoginPost" class="userLoginPost" [contentEditable]="contentEditableUser" #refuserlogin>{{users.login}}</h1>
+                                </td>
+                                <td nowrap align="center" style="width:100px">
+                                    <button (click)="callgetUserRole(users.uid, users.login);">Ver</button>
+                                </td>
+                                <td nowrap align="center">
+                                    <button (click) = "calleditUserPost(refuseruid.textContent,refuseremail.textContent,refuserlogin.textContent);addColumnValueUser();selectContentUsers();"  class="bttnSubmit" [style.display]="styleUser" #refbutton>submit</button>
+                                    <button (click) = "selectContentUsers();" [style.display]="styleUserButtonsUsers"  class="bttnSubmit"> Editar</button>
+                                    <button (click) = "callcanUserDelete(users);deleteColumnValueUser(users);" [style.display]="styleUserButtonsUsers"  class="bttnSubmit">
+                                        Apagar
+                                    </button>
+                                    <button (click)="callcreateUserPost();addColumnValueUser();" [style.display]="styleUserButtonsUsers" [contentEditable]="contentEditableButtons"  class="bttnSubmit">
+                                        Criar
+                                    </button>
+                                </td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </fieldset>
+                <br>
+                <br>
+                <fieldset *ngIf="user.uid"  [style.display]="styleUserFielsetRolesUsers">
+                    <legend> Tabela de roles associadas ao utilizador {{currentUserName}}</legend>
+                    <button class="btnListagem" (click)="callListUserRoles()">Ver listagem</button>
+                    <br>
+                    <br>
+                        <table id = "tableUserRoles" border=1 align="center" [style.display]="styleUserButtonsRolesUsersTables">
+                            <thead>
+                                <tr [style.display]="styleUserButtonsUsersTables">
+                                    <th>ID</th>
+                                    <th>Nome</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr *ngFor="let role of getUserRoles; let i = index">    
+                                    <td nowrap align="center">
+                                        <h1 id="userRolesPostId" class="userRolesPostId" [contentEditable]="contentEditableRolesUser" #refrolesuserid>{{role.id}}</h1>
+                                    </td>
+                                    <td nowrap align="center">
+                                        <h1 id="userRolesPostName" class="userRolesPostName" [contentEditable]="contentEditableRolesUser" #refrolesusername>{{role.name}}</h1>
+                                    </td>
+                                    <td nowrap align="center">
+                                        <button class="bttnSubmit" (click)="calleditRolesUserPost(role, refrolesuserid.textContent, refrolesusername.textContent);addColumnValueUserRoles();selectContentUserRoles();" [style.display]="styleRolesUser" #refbutton>submit</button>
+                                        &nbsp;&nbsp;
+                                        <button class="bttnSubmit"(click)="selectContentUserRoles();" [style.display]="styleUserButtonsRolesUsers"> Editar </button>
+                                        <button class="bttnSubmit"(click)="callcanRolesUserDelete(role);deleteColumnValueUserRoles(users);" [style.display]="styleUserButtonsRolesUsers">
+                                            Apagar
+                                        </button>
+                                        <button class="bttnSubmit" (click)="callcreateRolesUserPost();addColumnValueUserRoles();" [style.display]="styleUserButtonsRolesUsers">
+                                            Criar
+                                        </button>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                </fieldset>
+                <br>
+                <br>
+                <button (click)="logout()" *ngIf="user.uid">
+                    Logout
+                </button>
+        </div>
+        <div
+            infiniteScroll
+            [infiniteScrollDistance]="2"
+            [infiniteScrollThrottle]="1000"
+            (scrolled)="onScroll()">
+        </div>
+        <div *ngIf="!finished">
+            Loading more users...
+        </div>
+        <div *ngIf="finished">
+            Fim da base de dados...
+        </div>
+    </body>
+    <script>
+    </script>
+</html>
