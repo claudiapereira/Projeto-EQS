@@ -1,0 +1,34 @@
+<h2>
+    <!-- <button (click)="changeView()">Mudar visualização</button> -->
+  <!-- {{ name | uppercase }} Detalhes --></h2> 
+<div>
+  <div>
+    <label>Name:
+      <input [(ngModel)]="name" placeholder="Name" type="text" />
+    </label>
+  </div>
+  <div>
+    <label>Email:
+      <input [(ngModel)]="email" placeholder="Email" type="text" />
+    </label>
+  </div>
+  <div>
+    <label>Telefone:
+      <input [(ngModel)]="telefone" placeholder="Telefone" type="text" />
+    </label>
+  </div>
+  <br>
+  <br>
+  <div>
+    <label>Ficheiro:
+      <input type="file" name="files" (change)="fileChanged($event)" accept=".jpg, .jpeg, .png">
+    </label>
+  </div>
+  <br>
+  <br>
+  <input hidden id="image" name="image">
+</div>
+<br>
+<br>
+<button (click)="goBack()">go back</button>
+<button (click)="saveHero()">save</button>

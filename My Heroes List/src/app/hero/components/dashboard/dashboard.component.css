@@ -1,0 +1,15 @@
+.portrait {
+    max-width: 50%;
+    max-height: 50%;
+}
+.landscape {
+    max-width: 50%;
+    max-height: 50%;
+}
+.square {
+    max-width: 50%;
+    max-height: 50%;
+}
+h2 {
+    font-size: 25px;
+}

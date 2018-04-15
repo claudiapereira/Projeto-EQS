@@ -1,0 +1,48 @@
+<h2>My Heroes List</h2>
+<br>
+<br>
+<table style="width:1050px">
+  <tr>
+    <td valign="middle" style="text-align:right">
+      <!-- <button (click)="changeView()">Mudar visualização</button> -->
+      <span (click)="changeView_list()" class="slds-icon_container slds-icon-utility-announcement" title="List">
+          <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
+              <use  xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#rows" />
+          </svg>
+      </span>
+      <span (click)="changeView_cards()" class="slds-icon_container slds-icon-utility-announcement" title="Cards">
+          <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
+              <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#ad_set" />
+          </svg>
+      </span>
+      &nbsp;&nbsp;
+      <!-- <button (click)="create()" style="background-color:blue; color: white;">Add Hero</button> -->
+      <button (click)="create()" class="slds-button slds-button_neutral" style="background-color:blue; color: white;">Add Hero
+        <svg class="slds-button__icon slds-button__icon_right" aria-hidden="true">
+          <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#add" />
+        </svg>
+      </button>
+    </td>
+    <br>
+    <br>
+    <br>
+  </tr>
+  <tr>
+    <td>
+      <app-hero-list *ngIf="lista" [array]="heroes$ | async"></app-hero-list>
+      <app-hero-cards *ngIf="!lista" [array]="heroes$ | async"></app-hero-cards>
+    </td>
+  </tr>
+</table>
+<!-- <div>
+    <app-hero-cards *ngIf="!lista"></app-hero-cards>
+    <app-form *ngIf="lista"></app-form>
+</div> -->
+<!-- Base64 image -->
+<!--
+<div>
+  <img src="data:image/png;base64, iVBORw0KGgoAAAANSUhEUgAAAAUA
+AAAFCAYAAACNbyblAAAAHElEQVQI12P4//8/w38GIAXDIBKE0DHxgljNBAAO
+9TXL0Y4OHwAAAABJRU5ErkJggg==" alt="Red dot" />
+</div>
+-->

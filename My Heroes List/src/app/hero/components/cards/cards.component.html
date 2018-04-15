@@ -1,0 +1,27 @@
+<div style="background-color: rgb(201, 201, 201);">
+  <br>
+  <br>  
+  <div *ngFor="let hero of array" style="height:270px; width:370px; display: inline-block; vertical-align: middle; margin: 10px; margin-left: 25px; text-align:center; background-color: white">      
+    <img src="{{hero?.image}}"/>
+        <span (click)="update(hero.id)" class="slds-icon_container slds-icon-utility-announcement" title="Edit" style="position:absolute">
+          <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#edit" />
+          </svg>
+        </span>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        <span (click)="delete(hero.id)" class="slds-icon_container slds-icon-utility-announcement" title="Delete" style="position:absolute">
+          <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
+            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#delete" />
+          </svg>
+        </span>
+        <br> NAME &nbsp;&nbsp;
+        <label class="portrait" style="font-weight:bold"> {{hero.name}}</label>
+        <br> EMAIL &nbsp;&nbsp;
+        <label class="portrait"> {{hero.email}}</label>
+        <br>
+        <br> TELEFONE &nbsp;&nbsp;
+        <label class="portrait"> {{hero.telefone}}</label>
+  </div>
+  <br>
+  <br>
+</div>

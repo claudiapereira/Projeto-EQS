@@ -1,0 +1,38 @@
+<table style="width:1050px">
+    <tr class="changecolor"><td></td></tr>
+</table>
+<div *ngFor="let hero of array" class="col-1-4">
+    <div class="module hero">
+        <table style="width:1050px">
+            <tr>
+                <td align="center" style="width:240px; text-align:center">
+                    <img src="{{hero?.image}}"/>
+                </td>
+                <td style="width:240px;">
+                    NAME &nbsp;&nbsp;  <label class="portrait" style="font-weight:bold"> {{hero.name}}</label>
+                </td>
+                <td style="width:240px">
+                    EMAIL &nbsp;&nbsp; <label class="portrait"> {{hero.email}}</label>
+                </td>
+                <td style="width:240px">
+                    TELEFONE &nbsp;&nbsp; <label class="portrait"> {{hero.telefone}}</label>
+                </td>
+                <td style="width:240px; text-align:right">
+                    <span (click)="update(hero.id)" class="slds-icon_container slds-icon-utility-announcement" title="Edit">
+                        <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#edit" />
+                        </svg>
+                    </span>
+                    <span (click)="delete(hero.id)" class="slds-icon_container slds-icon-utility-announcement" title="Delete">
+                        <svg class="slds-icon slds-icon-text-default" aria-hidden="true">
+                            <use xmlns:xlink="http://www.w3.org/1999/xlink" xlink:href="/assets/icons/utility-sprite/svg/symbols.svg#delete" />
+                        </svg>
+                    </span>
+                </td>
+            </tr>
+        </table>
+        <table style="width:1050px">
+            <tr class="changecolor"><td></td></tr>
+        </table>
+    </div>
+</div>

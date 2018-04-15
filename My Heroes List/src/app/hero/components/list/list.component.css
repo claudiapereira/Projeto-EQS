@@ -1,0 +1,15 @@
+tr  {
+    /* border: 1px solid blue; */
+    background-color: white;
+}
+.changecolor {
+    background-color: rgb(201, 201, 201);
+    height:40px;
+    width:240px;
+}
+img {
+    border-top-left-radius: 50% 50%;
+    border-top-right-radius: 50% 50%;
+    border-bottom-right-radius: 50% 50%;
+    border-bottom-left-radius: 50% 50%;
+}

@@ -1,0 +1,21 @@
+Configração do servidor JSON
+
+Instalação:
+npm install -g json-server
+
+Arrancar com o serviço:
+json-server --watch db.json
+
+Obter dados:
+http://localhost:3000/heroes/1
+
+Configuração da app Angular
+
+Instalação
+npm install -g @angular/cli
+
+Arrancar com o serviço:
+ng server -o
+
+Aceder à aplicação:
+http://localhost:4200/
